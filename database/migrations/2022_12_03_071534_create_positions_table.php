@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('positions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->integer('1')->nullable();
+            $table->string('pos');
             $table->timestamps();
         });
     }

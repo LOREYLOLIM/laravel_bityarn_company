@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('employees_positions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('EmploymentID');
-            $table->integer('PositionID');
-            $table->date('CreatedAt');
+            $table->integer('employeeid');
+            $table->integer('positionid');
+            $table->integer('assigmentid');
             $table->integer('period');
             $table->timestamps();
         });

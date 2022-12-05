@@ -14,7 +14,8 @@ class PositionsController extends Controller
      */
     public function index()
     {
-        //
+        $pos = Positions::all();
+        return view('positionview')->with(compact('pos'));
     }
 
     /**
@@ -24,7 +25,7 @@ class PositionsController extends Controller
      */
     public function create()
     {
-        //
+        return view('positions');
     }
 
     /**
@@ -35,7 +36,12 @@ class PositionsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $position = new Positions();
+
+        $position->pos = $request->input('pos');
+
+        $position->save();
+
     }
 
     /**

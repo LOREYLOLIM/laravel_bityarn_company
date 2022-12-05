@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('lname');
             $table->string('oname');
             $table->enum('sex', ['F', 'M']);
-            $table->date('DOB');
+            $table->integer('DOB');
             $table->enum('IDtype', ['National', 'Passport']);
             $table->integer('IdNumber')->unique();
             $table->timestamps();

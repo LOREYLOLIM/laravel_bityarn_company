@@ -14,7 +14,9 @@ class EmployeesPositionsController extends Controller
      */
     public function index()
     {
-        //
+        $employeeposition = EmployeesPositions::all();
+        return view('employeepositionview')->with(compact('employeeposition'));
+
     }
 
     /**
@@ -24,7 +26,8 @@ class EmployeesPositionsController extends Controller
      */
     public function create()
     {
-        //
+        return view('employeespositions');
+
     }
 
     /**
@@ -35,7 +38,14 @@ class EmployeesPositionsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $employeeposition = new EmployeesPositions();
+
+        $employeeposition->employeeid = $request->input('employeeid');
+        $employeeposition->positionid = $request->input('positionid');
+        $employeeposition->assigmentid = $request->input('assigmentid');
+        $employeeposition->period = $request->input('period');
+
+        $employeeposition->save();
     }
 
     /**

@@ -14,7 +14,10 @@ class EmployeesController extends Controller
      */
     public function index()
     {
-        //
+        $employees = Employees::all();
+
+        return view('employeesview')->with(compact('employees'));
+
     }
 
     /**
@@ -24,7 +27,8 @@ class EmployeesController extends Controller
      */
     public function create()
     {
-        //
+        return view('employment');
+
     }
 
     /**
@@ -35,7 +39,19 @@ class EmployeesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $employee = new Employees();
+
+        $employee->fname = $request->input('fname');
+        $employee->lname = $request->input('lname');
+        $employee->oname = $request->input('oname');
+        $employee->sex = $request->input('sex');
+        $employee->DOB = $request->input('DOB');
+        $employee->IDtype = $request->input('IDtype');
+        $employee->IdNumber = $request->input('IdNumber');
+
+        $employee->save();
+
+        
     }
 
     /**
